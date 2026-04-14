@@ -12,8 +12,6 @@ load_dotenv()
 SERP_API_KEY = os.getenv("SERP_API_KEY")
 JINA_API_KEY = os.getenv("JINA_API_KEY")
 
-UPLOAD_DIR = "stored_papers"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 mcp = FastMCP("SearchAgent")
 
