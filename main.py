@@ -21,7 +21,7 @@ def search_web(query: str, required_links: int = 10):
     General search for websites, articles, and YouTube videos.
     The LLM should provide the query (e.g., 'YouTube explanation of Attention is All You Need').
     """
-    required_links = min(required_links, 20)
+    required_links = min(required_links, 50)
     results = []
     start = 0
     
@@ -64,7 +64,7 @@ def fetch_web_content(url: str) -> str:
     headers = {"Authorization": f"Bearer {JINA_API_KEY}"}
     
     try:
-        response = requests.get(reader_url, headers=headers, timeout=15)
+        response = requests.get(reader_url, headers=headers, timeout=60)
         response.raise_for_status()
         return response.text 
     except Exception as e:
